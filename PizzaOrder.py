@@ -50,6 +50,7 @@ def calculate_total(order):
       #Price calculation used from pizza_menu dictionary
       price = pizza_menu[pizza]
       total += price * quantity
+      #Calculate total with taxes
       total = total * 1.12
   return total
 
