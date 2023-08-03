@@ -38,7 +38,7 @@ def take_order():
       order[pizza_name] = quantity
   return order
 
-#Function to calculate the total of the users order
+#Function to calculate the total of the order
 def calculate_total(order):
   total = 0
   for pizza, quantity in order.items():
