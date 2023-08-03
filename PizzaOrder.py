@@ -4,6 +4,10 @@ pizza_menu = {
     "Pepperoni": 12.50,
     "Vegetarian": 11.50,
     "Hawaiian": 13.00,
+    "BBQ": 11.50,
+    "Canadian": 15.00,
+    "Chicago": 13.00,
+    "Greek": 12.00,
 }
 
 #Display the pizza menu to the user
@@ -46,8 +50,8 @@ def calculate_total(order):
       #Price calculation used from pizza_menu dictionary
       price = pizza_menu[pizza]
       total += price * quantity
+      total = total * 1.12
   return total
-
 
 def main():
   print("Welcome to the Pizza Restaurant POS!")
@@ -64,13 +68,10 @@ def main():
   print("\n****Summary Of Order****")
   #Print out order summary to user
   for pizza, quantity in order.items():
-    print(
-        f"{pizza}: {quantity} x ${pizza_menu[pizza]:.2f} = ${pizza_menu[pizza] * quantity:.2f}"
-    )
+    print(f"{pizza}: {quantity} x ${pizza_menu[pizza]:.2f} = ${pizza_menu[pizza] * quantity:.2f}")
   print("\n****Total****")
-  print(f"Total: ${total_cost:.2f}")
+  print(f"Total with taxes: ${total_cost:.2f}")
   print("Thank you for your order. Enjoy your pizza!")
-
 
 if __name__ == "__main__":
   main()
